@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3f;
+    color: #ffffff;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background_code.jpg'); /* Replace with your background image path */
+    /* source of stock photo: https://www.pexels.com/photo/green-and-yellow-printed-textile-330771/*/
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05; /* Adjust opacity for fading effect */
+    z-index: -1;
+}
+
+header {
+    background: rgba(0, 31, 63, 0.9); /* Slightly transparent to see the background */
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+main {
+    padding-top: 200px; /* Add padding to the top to make space for the fixed header */
+    max-width: 800px;
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 100px; /* Add padding to the bottom to make space for the footer */
+}
+
+section {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.experience-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.experience-item img {
+    max-width: 100px;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+footer {
+    background: rgba(0, 31, 63, 0.9); /* Slightly transparent to see the background */
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the footer is on top */
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .experience-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .experience-item img {
+        margin: 0 0 1rem 0;
+    }
+}
